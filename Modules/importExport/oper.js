@@ -6,4 +6,7 @@ const add = (a,b)=>{
 
 //any file can access add 
 //we have changed the status from private to public
-module.exports = add;
+
+const name='Dhiren';
+// we exporting name now.
+module.exports = name;
