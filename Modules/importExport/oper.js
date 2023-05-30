@@ -15,6 +15,9 @@ const name='Dhiren';
 
 //now we cannot pass directly we need to pass module.exports as an object so
 
-module.exports.add = add;
-module.exports.sub = sub;
-module.exports.name=name;
+// module.exports.add = add;
+// module.exports.sub = sub;
+// module.exports.name=name;
+
+//writing the code in above way is hectic so we can use the below given syntax
+module.exports ={add,sub,name};
