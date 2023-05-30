@@ -1,6 +1,4 @@
-const chalk=require("chalk");
-  
-// Printing the text
-console.log(chalk.red("aayush"))
-console.log(chalk.red.underline("aayush"))
-console.log(chalk.red.underline.bold("GFG"))
+import chalk from "chalk";
+import validator from "validator";
+const res=validator.isEmail("dhirengmail.com");
+console.log(res ? chalk.green.inverse(res):chalk.red.inverse(res));
