@@ -1,6 +1,9 @@
 const add = (a,b)=>{
     return a+b;
 }
+const sub=(a,b)=>{
+    return a-b;
+}
 //we cannot use the add in any other other file without exporting it.
 //as it private for this file.
 
@@ -9,4 +12,9 @@ const add = (a,b)=>{
 
 const name='Dhiren';
 // we exporting name now.
-module.exports = name;
+
+//now we cannot pass directly we need to pass module.exports as an object so
+
+module.exports.add = add;
+module.exports.sub = sub;
+module.exports.name=name;
