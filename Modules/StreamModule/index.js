@@ -28,6 +28,8 @@ server.on('request',(req,res)=>{
     // })
 
     //using pipe method
+    //pipe ek file se read karna aur given file mein write karvana
+    //speed was an issue the with which the data was read the data was not written and this is not case of rstream.
     const rstream= fs.createReadStream('input.txt');
     rstream.pipe(res);
 });
