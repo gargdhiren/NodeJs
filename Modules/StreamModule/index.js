@@ -11,21 +11,25 @@ server.on('request',(req,res)=>{
     //     else res.end(data.toString());
     // });
 
-    const rstream= fs.createReadStream('input.txt');
-    //data event and only this is not enough.
-    rstream.on('data',(chunkData)=>{
-        res.write(chunkData);
-    })
-    //this to end the rstream event
-    //it is fired when there is no more data to it.
-    rstream.on('end',()=>{
-        res.end();
-    })
+    // const rstream= fs.createReadStream('input.txt');
+    // //data event and only this is not enough.
+    // rstream.on('data',(chunkData)=>{
+    //     res.write(chunkData);
+    // })
+    // //this to end the rstream event
+    // //it is fired when there is no more data to it.
+    // rstream.on('end',()=>{
+    //     res.end();
+    // })
 
-    //for any errors
-    rstream.on('error',(err)=>{
-        console.log(err);
-    })
+    // //for any errors
+    // rstream.on('error',(err)=>{
+    //     console.log(err);
+    // })
+
+    //using pipe method
+    const rstream= fs.createReadStream('input.txt');
+    rstream.pipe(res);
 });
 
 server.listen(8000,'127.0.0.1',()=>{
